@@ -1,0 +1,8 @@
+name: MightyClass
+version: 1.0.1
+author: _Mentos
+main: mighty.classproject.main
+api-version: 1.18
+database: false
+permission-message: You do not have permission to use this command.
+

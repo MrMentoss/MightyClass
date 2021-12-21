@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id "com.github.johnrengelman.shadow" version "7.1.0"
+}
+
+group 'mighty.classproject'
+version '1.0.1'
+
+repositories {
+    mavenCentral()
+    maven { url = "https://hub.spigotmc.org/nexus/content/repositories/snapshots/" }
+    maven { url = "https://oss.sonatype.org/content/repositories/snapshots" }
+    maven { url = "https://oss.sonatype.org/content/repositories/central" }
+}
+
+dependencies {
+    implementation "org.spigotmc:spigot-api:1.18-R0.1-SNAPSHOT"
+    implementation "me.mattstudios.utils:matt-framework:1.4.6"
+}
+
+tasks.build.dependsOn tasks.shadowJar
+
+shadowJar {
+    relocate 'me.mattstudios.mf', 'mighty.classproject.shade`.mf'
+}
+
+
